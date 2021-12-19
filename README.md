@@ -1,2 +1,2 @@
-# Apfloat_Point
+# Apfloat Point
 ApfloatPoint java lib
