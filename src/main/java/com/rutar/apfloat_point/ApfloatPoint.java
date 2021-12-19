@@ -125,8 +125,8 @@ public static boolean equals (ApfloatPoint first,
 
 public ApfloatPoint add (double x, double y) {
 
-    Apfloat X = new Apfloat(x);
-    Apfloat Y = new Apfloat(y);
+    Apfloat X = new Apfloat(x).precision(PRECISION);
+    Apfloat Y = new Apfloat(y).precision(PRECISION);
     
     return new ApfloatPoint(this.x.add(X).precision(PRECISION),
                             this.y.add(Y).precision(PRECISION));
@@ -144,6 +144,9 @@ public ApfloatPoint add (double x, double y) {
 
 public ApfloatPoint add (Apfloat x, Apfloat y) {
 
+    x = x.precision(PRECISION);
+    y = y.precision(PRECISION);
+    
     return new ApfloatPoint(this.x.add(x).precision(PRECISION),
                             this.y.add(y).precision(PRECISION));
 
@@ -175,8 +178,8 @@ public ApfloatPoint add (ApfloatPoint point) {
 
 public ApfloatPoint subtract (double x, double y) {
 
-    Apfloat X = new Apfloat(x);
-    Apfloat Y = new Apfloat(y);
+    Apfloat X = new Apfloat(x).precision(PRECISION);
+    Apfloat Y = new Apfloat(y).precision(PRECISION);
     
     return new ApfloatPoint(this.x.subtract(X).precision(PRECISION),
                             this.y.subtract(Y).precision(PRECISION));
@@ -194,6 +197,9 @@ public ApfloatPoint subtract (double x, double y) {
 
 public ApfloatPoint subtract (Apfloat x, Apfloat y) {
 
+    x = x.precision(PRECISION);
+    y = y.precision(PRECISION);
+    
     return new ApfloatPoint(this.x.subtract(x).precision(PRECISION),
                             this.y.subtract(y).precision(PRECISION));
 
@@ -224,7 +230,7 @@ public ApfloatPoint subtract (ApfloatPoint point) {
 
 public ApfloatPoint multiply (double numeric) {
 
-    Apfloat N = new Apfloat(numeric);
+    Apfloat N = new Apfloat(numeric).precision(PRECISION);
     
     return new ApfloatPoint(this.x.multiply(N).precision(PRECISION),
                             this.y.multiply(N).precision(PRECISION));
@@ -241,6 +247,8 @@ public ApfloatPoint multiply (double numeric) {
 
 public ApfloatPoint multiply (Apfloat numeric) {
 
+    numeric = numeric.precision(PRECISION);
+    
     return new ApfloatPoint(x.multiply(numeric).precision(PRECISION),
                             y.multiply(numeric).precision(PRECISION));
     
@@ -257,8 +265,8 @@ public ApfloatPoint multiply (Apfloat numeric) {
 
 public ApfloatPoint multiply (double x, double y) {
 
-    Apfloat X = new Apfloat(x);
-    Apfloat Y = new Apfloat(y);
+    Apfloat X = new Apfloat(x).precision(PRECISION);
+    Apfloat Y = new Apfloat(y).precision(PRECISION);
     
     return new ApfloatPoint(this.x.multiply(X).precision(PRECISION),
                             this.y.multiply(Y).precision(PRECISION));
@@ -276,6 +284,9 @@ public ApfloatPoint multiply (double x, double y) {
 
 public ApfloatPoint multiply (Apfloat x, Apfloat y) {
 
+    x = x.precision(PRECISION);
+    y = y.precision(PRECISION);
+    
     return new ApfloatPoint(this.x.multiply(x).precision(PRECISION),
                             this.y.multiply(y).precision(PRECISION));
     
@@ -306,7 +317,7 @@ public ApfloatPoint multiply (ApfloatPoint point) {
 
 public ApfloatPoint divide (double numeric) {
 
-    Apfloat N = new Apfloat(numeric);
+    Apfloat N = new Apfloat(numeric).precision(PRECISION);
     
     return new ApfloatPoint(this.x.divide(N).precision(PRECISION),
                             this.y.divide(N).precision(PRECISION));
@@ -323,6 +334,8 @@ public ApfloatPoint divide (double numeric) {
 
 public ApfloatPoint divide (Apfloat numeric) {
 
+    numeric = numeric.precision(PRECISION);
+    
     return new ApfloatPoint(x.divide(numeric).precision(PRECISION),
                             y.divide(numeric).precision(PRECISION));
     
@@ -339,8 +352,8 @@ public ApfloatPoint divide (Apfloat numeric) {
 
 public ApfloatPoint divide (double x, double y) {
 
-    Apfloat X = new Apfloat(x);
-    Apfloat Y = new Apfloat(y);
+    Apfloat X = new Apfloat(x).precision(PRECISION);
+    Apfloat Y = new Apfloat(y).precision(PRECISION);
     
     return new ApfloatPoint(this.x.divide(X).precision(PRECISION),
                             this.y.divide(Y).precision(PRECISION));
@@ -358,6 +371,9 @@ public ApfloatPoint divide (double x, double y) {
 
 public ApfloatPoint divide (Apfloat x, Apfloat y) {
 
+    x = x.precision(PRECISION);
+    y = y.precision(PRECISION);
+    
     return new ApfloatPoint(this.x.divide(x).precision(PRECISION),
                             this.y.divide(y).precision(PRECISION));
     
@@ -382,7 +398,7 @@ public ApfloatPoint divide (ApfloatPoint point) {
 
     /**
      * Метод повертає точку за заданий кут відносно центру координат
-     * @param rotateAngle кут повороту точки
+     * @param rotateAngle кут повороту за годинниковою стрілкою
      * @return точка, повернена на заданий кут
      */
     
@@ -397,7 +413,7 @@ public ApfloatPoint rotatePoint (double rotateAngle) {
     /**
      * Метод повертає точку за заданий кут відносно заданої точки повороту
      * @param origin точка, відносно якої здійснюється поворот
-     * @param rotateAngle кут повороту точки
+     * @param rotateAngle кут повороту за годинниковою стрілкою
      * @return точка, повернена на заданий кут
      */
 
